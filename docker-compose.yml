@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+    sonarqube:
+        image: sonarqube:8.3.1-community
+        expose:
+            - 9000
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./volumes/sonarqube/conf:/opt/sonarqube/conf
+            - ./volumes/sonarqube/data:/opt/sonarqube/data
+            - ./volumes/sonarqube/logs:/opt/sonarqube/logs
+            - ./volumes/sonarqube/extensions:/opt/sonarqube/extensions
+  
+    jenkins:
+        image: jenkins/jenkins:lts
+        expose: 
+            - 8080
+        ports: 
+            - "8080:8080"
+        volumes:
+            - ./volumes/jenkins:/var/jenkins_home
