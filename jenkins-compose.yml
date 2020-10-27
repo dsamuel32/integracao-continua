@@ -3,7 +3,7 @@ version: "3"
 services:
   
     jenkins:
-        image: jenkins/jenkins:lts
+        image: jenkins/jenkins:2.249.2-lts-jdk11
         expose: 
             - 8080
         ports: 
