@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  
+    docker_ubuntu:
+        build: .
+        container_name: docker_ubuntu
+        image: docker_ubuntu
